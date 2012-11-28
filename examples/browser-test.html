@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Barcoder Test</title>
+  </head>
+  <body>
+    Take a look at your console.
+    <script src="../dist/barcoder.min.js"></script>
+    <script>
+      var ean1 = '0016T20054453';
+      var ean2 = '9330071314999';
+      var validator = new Barcoder('ean13');
+      console.log( ean1 + ' is valid: ' + validator.validate( ean1 ) );
+      console.log( ean2 + ' is valid: ' + validator.validate( ean2 ) );
+    </script>
+  </body>
+</html>

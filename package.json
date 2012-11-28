@@ -1,0 +1,13 @@
+{
+  "name"          : "barcoder",
+  "version"       : "1.0.0",
+  "description"   : "Barcoder is a simple EAN/GTIN validator",
+  "keywords"      : ["EAN", "GTIN", "validator", "barcode"],
+  "author"        : "Dominik Lessel <dominik@rocketeleven.de>",
+  "dependencies"  : {
+  },
+  "devDependencies": {
+    "should"   : "*"
+  },
+  "main"          : "index"
+}
