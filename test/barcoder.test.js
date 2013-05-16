@@ -4,6 +4,7 @@ var Barcoder = require('../lib/barcoder');
 
 var validEan13 = '9330071314999';
 var invalidEan13 = '0016T20054453';
+var validEan14 = '09781861978769';
 
 describe('Barcoder', function () {
 
@@ -27,6 +28,13 @@ describe('Barcoder', function () {
       validator.validate( validEan13 ).should.be.true;
       done();
     });
+
+    it('should return true, when validating a valid EAN14', function( done ) {
+      var validator = new Barcoder('ean14');
+      validator.validate( validEan14 ).should.be.true;
+      done();
+    });
+
 
     it('should return false, when validating an invalid EAN13', function( done ) {
       var validator = new Barcoder('ean13');
