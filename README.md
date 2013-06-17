@@ -23,7 +23,7 @@ $ npm install barcoder
 
 ### Usage
 
-```js
+```
 var Barcoder = require('barcoder');
 
 var ean1 = '0016T20054453';
@@ -31,8 +31,19 @@ var ean2 = '9330071314999';
       
 var validator = new Barcoder('ean13');
 
-console.log( ean1 + ' is valid: ' + validator.validate( ean1 ) );
-console.log( ean2 + ' is valid: ' + validator.validate( ean2 ) );
+console.log( '%s ean1 is valid: %s', ean1, validator.validate( ean1 ) );
+console.log( '%s ean2 is valid: %s', ean1, validator.validate( ean2 ) );
+
+// or /w automatic type selection
+
+validator = new Barcoder();
+
+var validation1 = validator.validate( ean1 );
+var validation2 = validator.validate( ean2 );
+
+console.log( '%s is valid: %s and has guessed type: %s', ean1, validation1.isValid, validation1.possibleType );
+console.log( '%s is valid: %s and has guessed type: %s', ean2, validation2.isValid, validation2.possibleType );
+
 ```
 
 ## In the Browser
