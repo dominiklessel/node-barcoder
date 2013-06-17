@@ -3,7 +3,8 @@
   "version"       : "1.1.0",
   "description"   : "Barcoder is a simple EAN/GTIN validator",
   "keywords"      : ["EAN", "GTIN", "validator", "barcode"],
-  "author"        : "Dominik Lessel <dominik@rocketeleven.de>",
+  "author"        : "Dominik Lessel <dominik@mifitto.com>",
+  "repository"    : "git://github.com/dominiklessel/barcoder.git",
   "dependencies"  : {
   },
   "devDependencies": {
