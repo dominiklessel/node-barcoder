@@ -1,5 +1,9 @@
 # Version history
 
+### 1.1.1 / 2013-10-23
+
+  * Switched to Creative Commons CC0 licensing
+
 ### 1.1.0 / 2013-06-17
 
   * Added automatic type selection
