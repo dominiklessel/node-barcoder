@@ -1,5 +1,9 @@
 # Version history
 
+### 1.1.2 / 2014-05-09
+
+  * Fixes #4 enableZeroPadding flag can't be set to false
+
 ### 1.1.1 / 2013-10-23
 
   * Switched to Creative Commons CC0 licensing
