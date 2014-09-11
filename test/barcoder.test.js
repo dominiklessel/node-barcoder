@@ -58,72 +58,56 @@ describe('Barcoder', function () {
     it('Valid EAN8 should return true', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( validEan8 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.true;
+      result.should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
     it('Valid EAN13 should return true', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( validEan13 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.true;
+      result.should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
     it('Valid zero padded EAN13 should return true', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( validPaddedEan13 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.true;
+      result.should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
     it('Valid unpadded EAN13 should return true', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( validUnPaddedEan13 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.true;
+      result.should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
     it('Valid EAN14 should return true', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( validEan14 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.true;
+      result.should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
     it('Invalid EAN8 should return false', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( invalidEan8 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.false;
+      result.should.be.an.instanceOf(Boolean).and.equal.false;
       done();
     });
 
     it('Invalid EAN13 should return false', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( invalidEan13 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.false;
+      result.should.be.an.instanceOf(Boolean).and.equal.false;
       done();
     });
 
     it('Invalid EAN14 should return false', function( done ) {
       var validator = new Barcoder();
       var result = validator.validate( invalidEan14 );
-      result.should.be.a('object');
-      result.should.have.property('possibleType');
-      result.isValid.should.be.false;
+      result.should.be.an.instanceOf(Boolean).and.equal.false;
       done();
     });
 
