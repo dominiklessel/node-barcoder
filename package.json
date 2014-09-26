@@ -1,7 +1,7 @@
 {
   "name": "barcoder",
   "version": "2.0.0",
-  "description": "Barcoder is a simple EAN/GTIN validator",
+  "description": "GTIN validation made simple",
   "keywords": ["EAN", "GTIN", "validator", "barcode"],
   "author": "Dominik Lessel <dominik@mifitto.com>",
   "repository": "git://github.com/dominiklessel/barcoder.git",
