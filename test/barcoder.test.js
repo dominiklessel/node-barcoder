@@ -3,7 +3,7 @@
  * Module dependencies
  */
 
-var should   = require('should');
+var Test = require('tape');
 var Barcoder = require('../');
 
 /**
@@ -25,38 +25,42 @@ var input = {
   },
 }
 
-describe('Barcoder', function () {
+Test('Barcoder', function( t ) {
 
-  describe('.validate()', function() {
+  t.plan( 1 );
 
-    it('Valid GTIN-8 should return `true`', function( done ) {
-      Barcoder.validate( input.gtin8.valid ).should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
+  t.test('.validate()', function( tt ) {
+
+    tt.plan( 6 );
+
+    tt.test('Valid GTIN-8 should return `true`', function( ttt ) {
+      ttt.plan( 1 );
+      ttt.equal( Barcoder.validate( input.gtin8.valid ), true );
     });
 
-    it('Valid GTIN-13 should return `true`', function( done ) {
-      Barcoder.validate( input.gtin13.valid ).should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
+    tt.test('Valid GTIN-13 should return `true`', function( ttt ) {
+      ttt.plan( 1 );
+      ttt.equal( Barcoder.validate( input.gtin13.valid ), true );
     });
 
-    it('Valid GTIN-14 should return `true`', function( done ) {
-      Barcoder.validate( input.gtin14.valid ).should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
+    tt.test('Valid GTIN-14 should return `true`', function( ttt ) {
+      ttt.plan( 1 );
+      ttt.equal( Barcoder.validate( input.gtin14.valid ), true );
     });
 
-    it('Invalid GTIN-8 should return `false`', function( done ) {
-      Barcoder.validate( input.gtin8.invalid ).should.be.an.instanceOf(Boolean).and.equal.false;
-      done();
+    tt.test('Inalid GTIN-8 should return `false`', function( ttt ) {
+      ttt.plan( 1 );
+      ttt.equal( Barcoder.validate( input.gtin8.invalid ), false );
     });
 
-    it('Invalid GTIN-13 should return `false`', function( done ) {
-      Barcoder.validate( input.gtin13.invalid ).should.be.an.instanceOf(Boolean).and.equal.false;
-      done();
+    tt.test('Inalid GTIN-13 should return `false`', function( ttt ) {
+      ttt.plan( 1 );
+      ttt.equal( Barcoder.validate( input.gtin13.invalid ), false );
     });
 
-    it('Invalid GTIN-14 should return `false', function( done ) {
-      Barcoder.validate( input.gtin14.invalid ).should.be.an.instanceOf(Boolean).and.equal.false;
-      done();
+    tt.test('Inalid GTIN-14 should return `false`', function( ttt ) {
+      ttt.plan( 1 );
+      ttt.equal( Barcoder.validate( input.gtin14.invalid ), false );
     });
 
   });

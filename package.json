@@ -6,7 +6,19 @@
   "author": "Dominik Lessel <dominik@mifitto.com>",
   "repository": "git://github.com/dominiklessel/barcoder.git",
   "scripts": {
-    "test": "make test"
+    "test": "make test-unit"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/6..latest",
+      "chrome/20..latest",
+      "firefox/10..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6"
+    ]
   },
   "devDependencies": {
     "should": "4.0.4",
