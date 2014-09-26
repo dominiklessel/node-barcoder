@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dominiklessel/node-barcoder.svg?branch=master)](https://travis-ci.org/dominiklessel/node-barcoder)
 
-Barcoder is a simple EAN/GTIN validator, built for [node.js](http://nodejs.org) and the browser.
-
-***README IS OUTDATED***
+Barcoder is a simple GTIN validator, built for [node.js](http://nodejs.org) and the browser.
 
 ## Currently supported formats:
 
