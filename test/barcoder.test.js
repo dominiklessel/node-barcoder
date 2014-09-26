@@ -1,113 +1,61 @@
 
+/**
+ * Module dependencies
+ */
+
 var should   = require('should');
-var Barcoder = require('../lib/barcoder');
+var Barcoder = require('../');
 
-var validEan8  = '55123457';
-var validEan13 = '9330071314999';
-var validPaddedEan13 = '0000000695152';
-var validUnPaddedEan13 = '695152';
-var validEan14 = '09781861978769';
+/**
+ * Input
+ */
 
-var invalidEan8  = '55123458';
-var invalidEan13 = '0016T20054453';
-var invalidEan14 = '09781861978768';
+var input = {
+  gtin8: {
+    valid: '55123457',
+    invalid: '55123458'
+  },
+  gtin13: {
+    valid: '9330071314999',
+    invalid: '0016T20054453'
+  },
+  gtin14: {
+    valid: '09781861978769',
+    invalid: '09781861978768'
+  },
+}
 
 describe('Barcoder', function () {
 
-  describe('new Barcoder()', function() {
-    it('should init without errors', function( done ) {
-      new Barcoder('ean13');
-      done();
-    });
-  });
+  describe('.validate()', function() {
 
-  describe('Barcoder(\'ean13\').validate()', function() {
-
-    it('Valid EAN13 should return true', function( done ) {
-      var validator = new Barcoder('ean13');
-      validator.validate( validEan13 ).should.be.true;
+    it('Valid GTIN-8 should return `true`', function( done ) {
+      Barcoder.validate( input.gtin8.valid ).should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
-    it('Invalid EAN13 should return false', function( done ) {
-      var validator = new Barcoder('ean13');
-      validator.validate( invalidEan13 ).should.be.false;
+    it('Valid GTIN-13 should return `true`', function( done ) {
+      Barcoder.validate( input.gtin13.valid ).should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
-  });
-
-  describe('Barcoder(\'ean14\').validate()', function() {
-
-    it('Valid EAN14 should return true', function( done ) {
-      var validator = new Barcoder('ean14');
-      validator.validate( validEan14 ).should.be.true;
+    it('Valid GTIN-14 should return `true`', function( done ) {
+      Barcoder.validate( input.gtin14.valid ).should.be.an.instanceOf(Boolean).and.equal.true;
       done();
     });
 
-    it('Invalid EAN14 should return false', function( done ) {
-      var validator = new Barcoder('ean14');
-      validator.validate( invalidEan14 ).should.be.false;
+    it('Invalid GTIN-8 should return `false`', function( done ) {
+      Barcoder.validate( input.gtin8.invalid ).should.be.an.instanceOf(Boolean).and.equal.false;
       done();
     });
 
-  });
-
-  describe('Barcoder().validate()', function() {
-
-    it('Valid EAN8 should return true', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( validEan8 );
-      result.should.be.an.instanceOf(Boolean).and.equal.true;
+    it('Invalid GTIN-13 should return `false`', function( done ) {
+      Barcoder.validate( input.gtin13.invalid ).should.be.an.instanceOf(Boolean).and.equal.false;
       done();
     });
 
-    it('Valid EAN13 should return true', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( validEan13 );
-      result.should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
-    });
-
-    it('Valid zero padded EAN13 should return true', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( validPaddedEan13 );
-      result.should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
-    });
-
-    it('Valid unpadded EAN13 should return true', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( validUnPaddedEan13 );
-      result.should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
-    });
-
-    it('Valid EAN14 should return true', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( validEan14 );
-      result.should.be.an.instanceOf(Boolean).and.equal.true;
-      done();
-    });
-
-    it('Invalid EAN8 should return false', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( invalidEan8 );
-      result.should.be.an.instanceOf(Boolean).and.equal.false;
-      done();
-    });
-
-    it('Invalid EAN13 should return false', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( invalidEan13 );
-      result.should.be.an.instanceOf(Boolean).and.equal.false;
-      done();
-    });
-
-    it('Invalid EAN14 should return false', function( done ) {
-      var validator = new Barcoder();
-      var result = validator.validate( invalidEan14 );
-      result.should.be.an.instanceOf(Boolean).and.equal.false;
+    it('Invalid GTIN-14 should return `false', function( done ) {
+      Barcoder.validate( input.gtin14.invalid ).should.be.an.instanceOf(Boolean).and.equal.false;
       done();
     });
 
