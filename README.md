@@ -1,7 +1,6 @@
 # Barcoder
 
 [![Build Status](https://travis-ci.org/dominiklessel/node-barcoder.svg?branch=master)](https://travis-ci.org/dominiklessel/node-barcoder)
-[![browser support](https://ci.testling.com/dominiklessel/node-barcoder.png)](https://ci.testling.com/dominiklessel/node-barcoder)
 
 Barcoder is a simple GTIN validator, built for [node.js](http://nodejs.org) and the browser.
 
