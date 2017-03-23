@@ -25,7 +25,7 @@ var ean1 = '0016T20054453';
 var ean2 = '9330071314999';
 
 console.log( '%s ean1 is valid: %s', ean1, Barcoder.validate( ean1 ) );
-console.log( '%s ean2 is valid: %s', ean1, Barcoder.validate( ean2 ) );
+console.log( '%s ean2 is valid: %s', ean2, Barcoder.validate( ean2 ) );
 
 ```
 
