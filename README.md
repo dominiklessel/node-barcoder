@@ -18,7 +18,7 @@ $ npm install barcoder
 
 ### Usage
 
-```
+```js
 var Barcoder = require('barcoder');
 
 var ean1 = '0016T20054453';
